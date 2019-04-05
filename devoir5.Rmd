@@ -5,7 +5,7 @@ date: "`r format(Sys.Date())`"
 output: github_document
 ---
 
-La version ouverte de ce travail est disponible à l'[adresse suivante](https://github.com/leliaanderson/GAE-7007.git)
+**La version ouverte de ce travail est disponible sur GitHub, [cliquer ici!](https://github.com/leliaanderson/GAE-7007.git)**
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
@@ -13,7 +13,6 @@ knitr::opts_chunk$set(echo = TRUE)
 
 
 # Étapes préliminaires
-
 Chargement des modules, lecture du **.csv** et ajustement de la date.
 
 ```{r prelim1, warning=T, message=F, results=F}
@@ -29,7 +28,6 @@ hawai$time=format(date_decimal(hawai$time), "%Y-%m-%d") #ajustement date
 ```
 
 # Création d'une série temporelle du CO2
-
 La série temporelle est créée.
 
 ```{r st1}
@@ -47,12 +45,7 @@ autoplot(hawai_ts)+labs(x="années", y ="CO2 (ppm-volume)") #visualisation gén�
 La série temporelle illustrée ci-dessus permet de constater que les moyennes des mesures mensuelles de CO2 atmosphérique fluctuent annuellement et ont suivi une tendance à la hausse sur la période mesurée 1958-2001.
 
 # Séparation de la série en parties d'entraînement
-
-Pour l'entraînement, 70% des données sont sélectionnées :
-
-$$(2001−1958)*0.70=30.1 ans$$
-
-La portion des données utilisées pour l'entraînement sera 1958-1987 (inclusivement) et la portion utilisée pour le test sera 1988-2001.
+Pour l'entraînement, 70% des données sont sélectionnées : $0.70*(2001−1958)=30.1$ ans. La portion des données utilisées pour l'entraînement sera 1958-1987 (inclusivement) et la portion utilisée pour le test sera 1988-2001.
 
 ```{r sepa}
 hawai_ts_train<-window(hawai_ts, start = 1958, end = 1987.9999) # données d'entraînement
@@ -76,7 +69,6 @@ hawai_fc %>% autoplot()+labs(x="années", y ="CO2 (ppm-volume)")
 La figure ci-dessus montre que les intervals de confiance 80% et 95% illustrées dans les régions bleutées sont très rapprochées des valeurs "test".
 
 # Analyse des résidus
-
 Afin de pouvoir commenter le modèle, une analyse des résidus est effectuée.
 
 ```{r resi_1}
@@ -110,7 +102,6 @@ La *p value* du test de *Shapiro-Wilk* étant de $1.341e-07$ (largement inférie
 # Le modèle est-il fiable? Comment pourrait-il être amélioré?
 
 ## Fiabilité?
-
 Une analyse d'exactitude est faites.
 
 ```{r, fiab_1}
@@ -126,7 +117,6 @@ summary(hawai_ets)
 La RMSE ayant une valeur nettement inférieure à l'amplitude des valeurs de CO2 mesurées montre que l'exactitude du modèle est bonne. Il est aussi intéressant de constater qu'il y a peu de différentes entre les valeurs de RMSE d'entraînement et de test, cela témoigne également de la bonne performance du modèle.
 
 ## Possiblité d'amélioration?
-
 D'un autre côté, comme la distribution des résidus n'est pas normale, et qu'il y a un résidu systématiquement corrélé entre le 0 et le 4 (environ), il pourrait exister une structure dans les données qui n'a pas été capturée par le modèle et du travail pourrait encore être fait pour tenter d'améliorer le modèle.
 
 Comme l'évolution du CO2 tient surment compte d'une série de covariables explicatives liées à l'environnement (et pas seulement à l'effet du temps), le modèle pourrait être amélioré en accueillant des covariables qui modélisent le terme d'erreur en fonction de séries temporelles conjointes. ARIMA pourrait par exemple être utilisé pour y parvenir.

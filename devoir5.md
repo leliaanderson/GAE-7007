@@ -3,7 +3,7 @@ Devoir 5
 lelia anderson
 2019-04-05
 
-La version ouverte de ce travail est disponible à l'[adresse suivante](https://github.com/leliaanderson/GAE-7007.git)
+**La version ouverte de ce travail est disponible sur GitHub, [cliquer ici!](https://github.com/leliaanderson/GAE-7007.git)**
 
 Étapes préliminaires
 ====================
@@ -51,11 +51,7 @@ La série temporelle illustrée ci-dessus permet de constater que les moyennes d
 Séparation de la série en parties d'entraînement
 ================================================
 
-Pour l'entraînement, 70% des données sont sélectionnées :
-
-(2001 − 1958)\*0.70 = 30.1*a**n**s*
-
-La portion des données utilisées pour l'entraînement sera 1958-1987 (inclusivement) et la portion utilisée pour le test sera 1988-2001.
+Pour l'entraînement, 70% des données sont sélectionnées : 0.70 \* (2001 − 1958)=30.1 ans. La portion des données utilisées pour l'entraînement sera 1958-1987 (inclusivement) et la portion utilisée pour le test sera 1988-2001.
 
 ``` r
 hawai_ts_train<-window(hawai_ts, start = 1958, end = 1987.9999) # données d'entraînement
