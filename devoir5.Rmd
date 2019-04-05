@@ -5,7 +5,7 @@ date: "`r format(Sys.Date())`"
 output: github_document
 ---
 
-La version R markdown de ce travail est disponible à l'[adresse [suivante](https://github.com/leliaanderson/GAE-7007.git)
+La version ouverte de ce travail est disponible à l'[adresse suivante](https://github.com/leliaanderson/GAE-7007.git)
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
@@ -48,8 +48,10 @@ La série temporelle illustrée ci-dessus permet de constater que les moyennes d
 
 # Séparation de la série en parties d'entraînement
 
-Pour l'entraînement, 70% des données sont sélectionnées : 
+Pour l'entraînement, 70% des données sont sélectionnées :
+
 $$(2001−1958)*0.70=30.1 ans$$
+
 La portion des données utilisées pour l'entraînement sera 1958-1987 (inclusivement) et la portion utilisée pour le test sera 1988-2001.
 
 ```{r sepa}

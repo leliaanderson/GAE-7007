@@ -3,7 +3,7 @@ Devoir 5
 lelia anderson
 2019-04-05
 
-La version R markdown de ce travail est disponible à l'adresse [suivante](https://youtu.be/Cv87NJ2xX0k?t=59)
+La version ouverte de ce travail est disponible à l'[adresse suivante](https://github.com/leliaanderson/GAE-7007.git)
 
 Étapes préliminaires
 ====================
@@ -52,8 +52,10 @@ Séparation de la série en parties d'entraînement
 ================================================
 
 Pour l'entraînement, 70% des données sont sélectionnées :
+
 (2001 − 1958)\*0.70 = 30.1*a**n**s*
- La portion des données utilisées pour l'entraînement sera 1958-1987 (inclusivement) et la portion utilisée pour le test sera 1988-2001.
+
+La portion des données utilisées pour l'entraînement sera 1958-1987 (inclusivement) et la portion utilisée pour le test sera 1988-2001.
 
 ``` r
 hawai_ts_train<-window(hawai_ts, start = 1958, end = 1987.9999) # données d'entraînement
