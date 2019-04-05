@@ -5,7 +5,7 @@ date: "`r format(Sys.Date())`"
 output: github_document
 ---
 
-La version R markdown de ce travail est disponible à l'[adresse [suivante](https://youtu.be/Cv87NJ2xX0k?t=59)
+La version R markdown de ce travail est disponible à l'[adresse [suivante](https://github.com/leliaanderson/GAE-7007.git)
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
